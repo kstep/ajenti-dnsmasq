@@ -1,0 +1,28 @@
+<body>
+    <pad id="main">
+        <button id="refresh" text="{Refresh}" icon="refresh" />
+        <bind:collection bind="leases">
+            <dt bind="__items">
+                <dtr>
+                    <dth width="1%" />
+                    <dth text="{Hostname}" />
+                    <dth text="{Host ID}" />
+                    <dth text="{IP address}" />
+                    <dth text="{Mac address}" />
+                    <dth text="{Expires}" />
+                </dtr>
+            </dt>
+
+            <bind:template>
+                <dtr>
+                    <dtd><icon icon="globe" /></dtd>
+                    <dtd><label bind="hostname" /></dtd>
+                    <dtd><label bind="hostid" /></dtd>
+                    <dtd><label bind="ipaddr" /></dtd>
+                    <dtd><label bind="macaddr" /></dtd>
+                    <dtd><tooltip bind="expires_in" bindtransform="str"><label bind="expires" bindtransform="str" /></tooltip></dtd>
+                </dtr>
+            </bind:template>
+        </bind:collection>
+    </pad>
+</body>
